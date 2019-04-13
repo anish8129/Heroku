@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Assignment</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<h2>Bank Assignment</h2>
+	<a href="#" id="branchByIfsc">Search Branches by IFSC</a> <a href="#" id="branchBycity">Search Branches By City and Name</a>
+	
+	<form action="/getBanksbyCity" id="formCity">
+  		Bank Name:<br>
+  		<input type="text" name="name" placeholder="Bank Name">
+  		<br>
+  		City:<br>
+  		<input type="text" name="city" placeholder="City Name">
+  		<br><br>
+  		<input type="submit" value="Submit">
+	</form>
+
+	<form action="/getBranch" id="formIfsc">
+  		IFSC Code:<br>
+  		<input type="text" name="ifsc" value="" placeholder="ifsc code">
+  		<br><br>
+  		<input type="submit" value="Submit">
+	</form>
+
+
+<script>
+$(document).ready(function(){
+	$("#formIfsc").hide();
+	$("#formCity").hide();
+	$("#branchByIfsc").click(function(){
+			$("#formCity").hide();
+			$("#formIfsc").show();
+	});
+	
+	$("#branchBycity").click(function(){
+			$("#formIfsc").hide();
+			$("#formCity").show();
+	});
+
+	});
+</script>
+</body>
+</html>

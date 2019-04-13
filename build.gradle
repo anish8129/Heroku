@@ -16,4 +16,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile('org.apache.tomcat.embed:tomcat-embed-jasper:8.0.47')
+	runtimeOnly 'org.postgresql:postgresql'
 }
